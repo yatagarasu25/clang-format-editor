@@ -88,6 +88,15 @@ namespace ClangFormatEditor
             continue;
           }
         }
+        else if (currentOptions[i] is FormatOptionSelectModel)
+        {
+          var currentOption = currentOptions[i] as FormatOptionSelectModel;
+          var defaultOption = defaultOptions[i] as FormatOptionSelectModel;
+          if (string.Compare(currentOption.Input, defaultOption.Input) == 0 || string.IsNullOrEmpty(currentOption.Input))
+          {
+            continue;
+          }
+        }
         else if (currentOptions[i] is FormatOptionMultipleInputModel)
         {
           var currentOption = currentOptions[i] as FormatOptionMultipleInputModel;
@@ -139,6 +148,10 @@ namespace ClangFormatEditor
             output.AppendLine(styleOption);
             break;
           case FormatOptionInputModel option when string.IsNullOrWhiteSpace(option.Input) == false:
+            styleOption = string.Concat(option.Name, ": ", option.Input);
+            output.AppendLine(styleOption);
+            break;
+          case FormatOptionSelectModel option when string.IsNullOrWhiteSpace(option.Input) == false:
             styleOption = string.Concat(option.Name, ": ", option.Input);
             output.AppendLine(styleOption);
             break;

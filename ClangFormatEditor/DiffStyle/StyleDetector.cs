@@ -159,6 +159,20 @@ namespace ClangFormatEditor.DiffStyle
                 }
               }
               break;
+            case FormatOptionSelectModel foundSelectModel:
+              var defaultSelect = (FormatOptionSelectModel)defaultOptions[i];
+              if (foundSelectModel.Input != defaultSelect.Input)
+              {
+                if (inputChanged.ContainsKey(foundSelectModel.Input))
+                {
+                  inputChanged[foundSelectModel.Input]++;
+                }
+                else
+                {
+                  inputChanged.Add(foundSelectModel.Input, 1);
+                }
+              }
+              break;
             default:
               break;
           }
