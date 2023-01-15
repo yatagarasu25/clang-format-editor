@@ -10,13 +10,8 @@ namespace ClangFormatEditor
     #region Members
 
     public static readonly string AppDataDirectory;
-    public static ProjectSetup Instance
-    {
-      get
-      {
-        return instance;
-      }
-    }
+    public static ProjectSetup Instance => instance;
+    public static string ClangFormatExe;
 
     private static readonly ProjectSetup instance = new();
 
@@ -28,6 +23,7 @@ namespace ClangFormatEditor
     static ProjectSetup()
     {
       AppDataDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), AppConstants.ClangFormatEditor);
+      ClangFormatExe = Path.Combine(AppDataDirectory, AppConstants.ClangFormatExe);
       SetupFormatDirectory();
     }
 

@@ -5,7 +5,6 @@ namespace ClangFormatEditor.MVVM.Models
 {
   public class FormatOptionModel : IFormatOption, INotifyPropertyChanged
   {
-
     #region Members
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -16,8 +15,10 @@ namespace ClangFormatEditor.MVVM.Models
     #endregion
 
     #region Properties
+    public int Deprecated { get; set; } = -1;
+    public int Version { get; set; } = -1;
     public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
+    public virtual string Description { get; set; } = string.Empty;
     public string Paramater { get; set; } = string.Empty;
 
     public bool IsEnabled
