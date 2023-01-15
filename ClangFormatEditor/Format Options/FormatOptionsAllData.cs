@@ -195,11 +195,16 @@ namespace ClangFormatEditor
       },
       {
         "AllowShortBlocksOnASingleLine",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 5),
           Name = "AllowShortBlocksOnASingleLine",
           Paramater = "ShortBlockStyle",
-          Description = "Dependent on the value, while (true) { continue; } can be put on a single line.\r\nPossible values:\r\n- SBS_Never (in configuration: Never) Never merge blocks into a single line.\r\n- SBS_Empty (in configuration: Empty) Only merge empty blocks.\r\n- SBS_Always (in configuration: Always) Always merge short blocks into a single line.",
+          Description = "Dependent on the value, while (true) { continue; } can be put on a single line.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "SBS_Never", Value = "Never", Description = "Never merge blocks into a single line" },
+            new FormatOptionSelectModelValue { Name = "SBS_Empty", Value = "Empty", Description = "Only merge empty blocks" },
+            new FormatOptionSelectModelValue { Name = "SBS_Always", Value = "Always", Description = "Always merge short blocks into a single line" }
+          },
           Input = "Never"
         }
       },
@@ -351,10 +356,19 @@ namespace ClangFormatEditor
       },
       {
         "BasedOnStyle",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Name = "BasedOnStyle",
           Paramater = "string",
-          Description = "The style used for all options not specifically set in the configuration.\r\nPossible values:\r\n- LLVM\r\n- Google\r\n- Chromium\r\n- Mozilla\r\n- WebKit\r\n- Microsoft\r\n- GNU",
+          Description = "The style used for all options not specifically set in the configuration.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "LLVM", Value = "LLVM", Description = "LLVM style" },
+            new FormatOptionSelectModelValue { Name = "Google", Value = "Google", Description = "Google style" },
+            new FormatOptionSelectModelValue { Name = "Chromium", Value = "Chromium", Description = "Chromium style" },
+            new FormatOptionSelectModelValue { Name = "Mozilla", Value = "Mozilla", Description = "Mozilla style" },
+            new FormatOptionSelectModelValue { Name = "WebKit", Value = "WebKit", Description = "WebKit style" },
+            new FormatOptionSelectModelValue { Name = "Microsoft", Value = "Microsoft", Description = "Microsoft style" },
+            new FormatOptionSelectModelValue { Name = "GNU", Value = "GNU", Description = "Microsoft style" }
+          },
           Input = ""
         }
       },
@@ -695,11 +709,17 @@ namespace ClangFormatEditor
       },
       {
         "EmptyLineBeforeAccessModifier",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(12),
           Name = "EmptyLineBeforeAccessModifier",
           Paramater = "EmptyLineBeforeAccessModifierStyle",
-          Description = "Defines in which cases to put empty line before access modifiers.\r\nPossible values:\r\n- ELBAMS_Never (in configuration: Never) Remove all empty lines before access modifiers\r\n- ELBAMS_Leave (in configuration: Leave) Keep existing empty lines before access modifiers.\r\n- ELBAMS_LogicalBlock (in configuration: LogicalBlock) Add empty line only when access modifier starts a new logical block\r\n- ELBAMS_Always (in configuration: Always) Always add empty line before access modifiers unless access modifier is at the start of struct or class definitio",
+          Description = "Defines in which cases to put empty line before access modifiers.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "ELBAMS_Never", Value = "Never", Description = "Remove all empty lines before access modifiers" },
+            new FormatOptionSelectModelValue { Name = "ELBAMS_Leave", Value = "Leave", Description = "Keep existing empty lines before access modifiers" },
+            new FormatOptionSelectModelValue { Name = "ELBAMS_LogicalBlock", Value = "LogicalBlock", Description = "Add empty line only when access modifier starts a new logical block" },
+            new FormatOptionSelectModelValue { Name = "ELBAMS_Always", Value = "Always", Description = "Always add empty line before access modifiers unless access modifier is at the start of struct or class definition" }
+          },
           Input = "Never"
         }
       },
@@ -745,11 +765,16 @@ namespace ClangFormatEditor
       },
       {
         "IncludeBlocks",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(6),
           Name = "IncludeBlocks",
           Paramater = "IncludeBlocksStyle",
-          Description = "Dependent on the value, multiple #include blocks can be sorted as one and divided based on category.\r\nPossible values:\r\n- IBS_Preserve (in configuration: Preserve) Sort each #include block separately.\r\n- IBS_Merge (in configuration: Merge) Merge multiple #include blocks together and sort as one.\r\n- IBS_Regroup (in configuration: Regroup) Merge multiple #include blocks together and sort as one. Then split into groups based on category priority. See IncludeCategories",
+          Description = "Dependent on the value, multiple #include blocks can be sorted as one and divided based on category.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "IBS_Preserve", Value = "Preserve", Description = "Sort each #include block separately" },
+            new FormatOptionSelectModelValue { Name = "IBS_Merge", Value = "Merge", Description = "Merge multiple #include blocks together and sort as one" },
+            new FormatOptionSelectModelValue { Name = "IBS_Regroup", Value = "Regroup", Description = "Merge multiple #include blocks together and sort as one. Then split into groups based on category priority. See IncludeCategories" }
+          },
           Input = "Preserve"
         }
       },
@@ -815,11 +840,16 @@ namespace ClangFormatEditor
       },
       {
         "IndentExternBlock",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(11),
           Name = "IndentExternBlock",
           Paramater = "IndentExternBlockStyle",
-          Description = "IndentExternBlockStyle is the type of indenting of extern blocks.\r\nPossible values:\r\n- IEBS_AfterExternBlock (in configuration: AfterExternBlock) Backwards compatible with AfterExternBlock’s indenting.\r\n- IEBS_NoIndent (in configuration: NoIndent) Does not indent extern blocks.\r\n- IEBS_Indent (in configuration: Indent) Indents extern blocks.",
+          Description = "IndentExternBlockStyle is the type of indenting of extern blocks.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "IEBS_AfterExternBlock", Value = "AfterExternBlock", Description = "Backwards compatible with AfterExternBlock’s indenting" },
+            new FormatOptionSelectModelValue { Name = "IEBS_NoIndent", Value = "NoIndent", Description = "Does not indent extern blocks" },
+            new FormatOptionSelectModelValue { Name = "IEBS_Indent", Value = "Indent", Description = "Indents extern blocks" }
+          },
           Input = "Indent"
         }
       },
@@ -835,11 +865,16 @@ namespace ClangFormatEditor
       },
       {
         "IndentPPDirectives",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(6),
           Name = "IndentPPDirectives",
           Paramater = "PPDirectiveIndentStyle",
-          Description = "The preprocessor directive indenting style to use.\r\nPossible values:\r\n- PPDIS_None (in configuration: None) Does not indent any directives\r\n- PPDIS_AfterHash (in configuration: AfterHash) Indents directives after the hash.\r\n- PPDIS_BeforeHash (in configuration: BeforeHash) Indents directives before the hash.",
+          Description = "The preprocessor directive indenting style to use.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "PPDIS_None", Value = "None", Description = "Does not indent any directives" },
+            new FormatOptionSelectModelValue { Name = "PPDIS_AfterHash", Value = "AfterHash", Description = "Indents directives after the hash" },
+            new FormatOptionSelectModelValue { Name = "PPDIS_BeforeHash", Value = "BeforeHash", Description = "Indents directives before the hash" }
+          },
           Input = "None"
         }
       },
@@ -906,11 +941,15 @@ namespace ClangFormatEditor
       },
       {
         "InsertTrailingCommas",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(11),
           Name = "InsertTrailingCommas",
           Paramater = "TrailingCommaStyle",
           Description = "If set to TCS_Wrapped will insert trailing commas in container literals (arrays and objects) that wrap across multiple lines. It is currently only available for JavaScript and disabled by default TCS_None. InsertTrailingCommas cannot be used together with BinPackArguments as inserting the comma disables bin-packing.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "TCS_None", Value = "None", Description = "Do not insert trailing commas" },
+            new FormatOptionSelectModelValue { Name = "TCS_Wrapped", Value = "Wrapped", Description = "Insert trailing commas in container literals that were wrapped over multiple lines. Note that this is conceptually incompatible with bin-packing, because the trailing comma is used as an indicator that a container should be formatted one-per-line (i.e. not bin-packed). So inserting a trailing comma counteracts bin-packing" }
+          },
           Input = "None"
         }
       },
@@ -943,11 +982,16 @@ namespace ClangFormatEditor
       },
       {
         "JavaScriptQuotes",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 9),
           Name = "JavaScriptQuotes",
           Paramater = "JavaScriptQuoteStyle",
-          Description = "The JavaScriptQuoteStyle to use for JavaScript strings.\r\nPossible values:\r\n- JSQS_Leave (in configuration: Leave) Leave string quotes as they \r\n- JSQS_Single (in configuration: Single) Always use single quotes.\r\n- JSQS_Double (in configuration: Double) Always use double quotes.",
+          Description = "The JavaScriptQuoteStyle to use for JavaScript strings.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "JSQS_Leave", Value = "Leave", Description = "Leave string quotes as they are" },
+            new FormatOptionSelectModelValue { Name = "JSQS_Single", Value = "Single", Description = "Always use single quotes" },
+            new FormatOptionSelectModelValue { Name = "JSQS_Double", Value = "Double", Description = "Always use double quotes" },
+          },
           Input = "Leave"
         }
       },
@@ -1062,11 +1106,16 @@ namespace ClangFormatEditor
       },
       {
         "ObjCBinPackProtocolList",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(7),
           Name = "ObjCBinPackProtocolList",
           Paramater = "BinPackStyle",
-          Description = "Controls bin-packing Objective-C protocol conformance list items into as few lines as possible when they go over ColumnLimit.\r\nPossible values:\r\n- BPS_Auto (in configuration: Auto) Automatically determine parameter bin-packing behavior.\r\n- BPS_Always (in configuration: Always) Always bin-pack parameters.\r\n- BPS_Never (in configuration: Never) Never bin-pack parameters.",
+          Description = "Controls bin-packing Objective-C protocol conformance list items into as few lines as possible when they go over ColumnLimit.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "BPS_Auto", Value = "Auto", Description = "Automatically determine parameter bin-packing behavior" },
+            new FormatOptionSelectModelValue { Name = "BPS_Always", Value = "Always", Description = "Always bin-pack parameters" },
+            new FormatOptionSelectModelValue { Name = "BPS_Never", Value = "Never", Description = "Never bin-pack parameters" }
+          },
           Input = "Auto"
         }
       },
@@ -1238,11 +1287,16 @@ namespace ClangFormatEditor
       },
       {
         "PointerAlignment",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 7),
           Name = "PointerAlignment",
           Paramater = "PointerAlignmentStyle",
-          Description = "Pointer and reference alignment style.\r\nPossible values:\r\n- PAS_Left (in configuration: Left) Align pointer to the left.\r\n- PAS_Right (in configuration: Right) Align pointer to the right.\r\n- PAS_Middle (in configuration: Middle) Align pointer in the middle.",
+          Description = "Pointer and reference alignment style.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "PAS_Left", Value = "Left", Description = "Align pointer to the left" },
+            new FormatOptionSelectModelValue { Name = "PAS_Right", Value = "Right", Description = "Align pointer to the right" },
+            new FormatOptionSelectModelValue { Name = "PAS_Middle", Value = "Middle", Description = "Align pointer in the middle" }
+          },
           Input = "Right"
         }
       },
@@ -1447,11 +1501,17 @@ namespace ClangFormatEditor
       },
       {
         "SpaceAroundPointerQualifiers",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(12),
           Name = "SpaceAroundPointerQualifiers",
           Paramater = "SpaceAroundPointerQualifiersStyle",
-          Description = "Defines in which cases to put a space before or after pointer qualifiers.\r\nPossible values:\r\n- SAPQ_Default (in configuration: Default) Don’t ensure spaces around pointer qualifiers and use PointerAlignment instead.\r\n- SAPQ_Before (in configuration: Before) Ensure that there is a space before pointer qualifiers.\r\n- SAPQ_After (in configuration: After) Ensure that there is a space after pointer qualifiers.\r\n - SAPQ_Both (in configuration: Both) Ensure that there is a space both before and after pointer qualifiers",
+          Description = "Defines in which cases to put a space before or after pointer qualifiers.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "SAPQ_Default", Value = "Default", Description = "Don’t ensure spaces around pointer qualifiers and use PointerAlignment instead" },
+            new FormatOptionSelectModelValue { Name = "SAPQ_Before", Value = "Before", Description = "Ensure that there is a space before pointer qualifiers" },
+            new FormatOptionSelectModelValue { Name = "SAPQ_After", Value = "After", Description = "Ensure that there is a space after pointer qualifiers" },
+            new FormatOptionSelectModelValue { Name = "SAPQ_Both", Value = "Both", Description = "Ensure that there is a space both before and after pointer qualifiers" }
+          },
           Input = "Default"
         }
       },
@@ -1721,11 +1781,17 @@ namespace ClangFormatEditor
       },
       {
         "UseTab",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 7),
           Name = "UseTab",
           Paramater = "UseTabStyle",
-          Description = "The way to use tab characters in the resulting file.\r\nPossible values:\r\n- UT_Never (in configuration: Never) Never use tab.\r\n- UT_ForIndentation (in configuration: ForIndentation) Use tabs only for indentation.\r\n- UT_ForContinuationAndIndentation (in configuration: ForContinuationAndIndentation) Use tabs only for line continuation and indentation.\r\n- UT_Always (in configuration: Always) Use tabs whenever we need to fill whitespace that spans at least from one tab stop to the next on",
+          Description = "The way to use tab characters in the resulting file.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "UT_Never", Value = "Never", Description = "Never use tab" },
+            new FormatOptionSelectModelValue { Name = "UT_ForIndentation", Value = "ForIndentation", Description = "Use tabs only for indentation" },
+            new FormatOptionSelectModelValue { Name = "UT_ForContinuationAndIndentation", Value = "ForContinuationAndIndentation", Description = "Use tabs only for line continuation and indentation" },
+            new FormatOptionSelectModelValue { Name = "UT_Always", Value = "Always", Description = "Use tabs whenever we need to fill whitespace that spans at least from one tab stop to the next on" }
+          },
           Input = "Never"
         }
       },
