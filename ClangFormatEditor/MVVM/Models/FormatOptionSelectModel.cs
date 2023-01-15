@@ -32,7 +32,7 @@ namespace ClangFormatEditor.MVVM.Models
 
     public override string Description {
       get { return string.Join("\r\n", description, "Possible values:"
-        , string.Join("\r\n", Values.Select(v => $"{v.Name} (in configuration: {v.Value}) {v.Description}"))); }
+        , string.Join("\r\n", Values.Select(v => $" - {v.Name} (in configuration: {v.Value}) {v.Description}"))); }
       set { description = value; }
     }
 

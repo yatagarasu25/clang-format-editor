@@ -73,51 +73,82 @@ namespace ClangFormatEditor
       },
       {
         "AlignConsecutiveBitFields",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(11),
           Name = "AlignConsecutiveBitFields",
           Paramater = "AlignConsecutiveStyle",
-          Description = "Style of aligning consecutive bit field.\r\nPossible values:\r\n- ACS_None (in configuration: None) Do not align assignments on consecutive lines.\r\n- ACS_Consecutive (in configuration: Consecutive) Align assignments on consecutive lines.\r\n- ACS_AcrossEmptyLines (in configuration: AcrossEmptyLines) Same as ACS_Consecutive, but also spans over empty lines.\r\n- ACS_AcrossComments (in configuration: AcrossComments) Same as ACS_Consecutive, but also spans over comments.\r\n- ACS_AcrossEmptyLinesAndComments (in configuration: AcrossEmptyLinesAndComments) Same as ACS_Consecutive, but also spans over comments and empty lines.",
+          Description = "Style of aligning consecutive bit field.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "ACS_None", Value = "None", Description = "Do not align assignments on consecutive lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_Consecutive", Value = "Consecutive", Description = "Align assignments on consecutive lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossEmptyLines", Value = "AcrossEmptyLines", Description = "Same as ACS_Consecutive, but also spans over empty lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossComments", Value = "AcrossComments", Description = "Same as ACS_Consecutive, but also spans over comments" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossEmptyLinesAndComments", Value = "AcrossEmptyLinesAndComments", Description = "Same as ACS_Consecutive, but also spans over comments and empty lines" },
+          },
           Input = "None"
         }
       },
       {
         "AlignConsecutiveDeclarations",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 8),
           Name = "AlignConsecutiveDeclarations",
           Paramater = "AlignConsecutiveStyle",
-          Description = "Style of aligning consecutive declarations.\r\nPossible values:\r\n- ACS_None (in configuration: None) Do not align assignments on consecutive lines.\r\n- ACS_Consecutive (in configuration: Consecutive) Align assignments on consecutive lines.\r\n- ACS_AcrossEmptyLines (in configuration: AcrossEmptyLines) Same as ACS_Consecutive, but also spans over empty lines.\r\n- ACS_AcrossComments (in configuration: AcrossComments) Same as ACS_Consecutive, but also spans over comments.\r\n- ACS_AcrossEmptyLinesAndComments (in configuration: AcrossEmptyLinesAndComments) Same as ACS_Consecutive, but also spans over comments and empty lines.",
+          Description = "Style of aligning consecutive declarations.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "ACS_None", Value = "None", Description = "Do not align assignments on consecutive lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_Consecutive", Value = "Consecutive", Description = "Align assignments on consecutive lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossEmptyLines", Value = "AcrossEmptyLines", Description = "Same as ACS_Consecutive, but also spans over empty lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossComments", Value = "AcrossComments", Description = "Same as ACS_Consecutive, but also spans over comments" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossEmptyLinesAndComments", Value = "AcrossEmptyLinesAndComments", Description = "Same as ACS_Consecutive, but also spans over comments and empty lines" },
+          },
           Input = "None"
         }
       },
       {
         "AlignConsecutiveMacros",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(9),
           Name = "AlignConsecutiveMacros",
           Paramater = "AlignConsecutiveStyle",
-          Description = "Style of aligning consecutive macro definitions.\r\nPossible values:\r\n- ACS_None (in configuration: None) Do not align assignments on consecutive lines.\r\n- ACS_Consecutive (in configuration: Consecutive) Align assignments on consecutive lines.\r\n- ACS_AcrossEmptyLines (in configuration: AcrossEmptyLines) Same as ACS_Consecutive, but also spans over empty lines.\r\n- ACS_AcrossComments (in configuration: AcrossComments) Same as ACS_Consecutive, but also spans over comments.\r\n- ACS_AcrossEmptyLinesAndComments (in configuration: AcrossEmptyLinesAndComments) Same as ACS_Consecutive, but also spans over comments and empty lines.",
+          Description = "Style of aligning consecutive macro definitions.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "ACS_None", Value = "None", Description = "Do not align assignments on consecutive lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_Consecutive", Value = "Consecutive", Description = "Align assignments on consecutive lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossEmptyLines", Value = "AcrossEmptyLines", Description = "Same as ACS_Consecutive, but also spans over empty lines" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossComments", Value = "AcrossComments", Description = "Same as ACS_Consecutive, but also spans over comments" },
+            new FormatOptionSelectModelValue { Name = "ACS_AcrossEmptyLinesAndComments", Value = "AcrossEmptyLinesAndComments", Description = "Same as ACS_Consecutive, but also spans over comments and empty lines" },
+          },
           Input = "None"
         }
       },
       {
         "AlignEscapedNewlines",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(5),
           Name = "AlignEscapedNewlines",
           Paramater = "EscapedNewlineAlignmentStyle",
-          Description = "Options for aligning backslashes in escaped newlines.\r\nPossible values:\r\n- ENAS_DontAlign (in configuration: DontAlign) Don’t align escaped newlines\r\n- ENAS_Left (in configuration: Left) Align escaped newlines as far left as possible.\r\n- ENAS_Right (in configuration: Right) Align escaped newlines in the right-most column.",
+          Description = "Options for aligning backslashes in escaped newlines.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "ENAS_DontAlign", Value = "DontAlign", Description = "Don’t align escaped newlines" },
+            new FormatOptionSelectModelValue { Name = "ENAS_Left", Value = "Left", Description = "Align escaped newlines as far left as possible" },
+            new FormatOptionSelectModelValue { Name = "ENAS_Right", Value = "Right", Description = "Align escaped newlines in the right-most column" }
+          },
           Input = "Right"
         }
       },
       {
         "AlignOperands",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 5),
           Name = "AlignOperands",
           Paramater = "OperandAlignmentStyle",
-          Description = "Horizontally align operands of binary and ternary expressions.\r\nPossible values:\r\n- OAS_DontAlign (in configuration: DontAlign) Do not align operands of binary and ternary expressions\r\n- OAS_Align (in configuration: Align) Horizontally align operands of binary and ternary expressions.\r\n- OAS_AlignAfterOperator (in configuration: AlignAfterOperator) Horizontally align operands of binary and ternary expression",
+          Description = "Horizontally align operands of binary and ternary expressions.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "OAS_DontAlign", Value = "DontAlign", Description = "Do not align operands of binary and ternary expressions" },
+            new FormatOptionSelectModelValue { Name = "OAS_Align", Value = "Align", Description = "Horizontally align operands of binary and ternary expressions" },
+            new FormatOptionSelectModelValue { Name = "OAS_AlignAfterOperator", Value = "AlignAfterOperator", Description = "Horizontally align operands of binary and ternary expression" }
+          },
           Input = "Align"
         }
       },
@@ -194,31 +225,49 @@ namespace ClangFormatEditor
       },
       {
         "AllowShortFunctionsOnASingleLine",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 5),
           Name = "AllowShortFunctionsOnASingleLine",
           Paramater = "ShortFunctionStyle",
-          Description = "Dependent on the value, int f() { return 0; } can be put on a single line.\r\nPossible values:\r\n- SFS_None (in configuration: None) Never merge functions into a single line.\r\n- SFS_InlineOnly (in configuration: InlineOnly) Only merge functions defined inside a class. Same as “inline”, except it does not implies “empty”: i.e. top level empty functions are not merged either.\r\n- SFS_Empty (in configuration: Empty) Only merge empty functions.\r\n- SFS_Inline (in configuration: Inline) Only merge functions defined inside a class. Implies “empty”.\r\n- SFS_All (in configuration: All) Merge all functions fitting on a single line.",
+          Description = "Dependent on the value, int f() { return 0; } can be put on a single line.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "SFS_None", Value = "None", Description = "Never merge functions into a single line" },
+            new FormatOptionSelectModelValue { Name = "SFS_InlineOnly", Value = "InlineOnly", Description = "Only merge functions defined inside a class. Same as “inline”, except it does not implies “empty”: i.e. top level empty functions are not merged either" },
+            new FormatOptionSelectModelValue { Name = "SFS_Empty", Value = "Empty", Description = "Only merge empty functions" },
+            new FormatOptionSelectModelValue { Name = "SFS_Inline", Value = "Inline", Description = "Only merge functions defined inside a class. Implies “empty”" },
+            new FormatOptionSelectModelValue { Name = "SFS_All", Value = "All", Description = "Merge all functions fitting on a single line" }
+          },
           Input = "All"
         }
       },
       {
         "AllowShortIfStatementsOnASingleLine",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 3),
           Name = "AllowShortIfStatementsOnASingleLine",
           Paramater = "ShortIfStyle",
-          Description = "If true, if (a) return; can be put on a single line.\r\nPossible values:\r\n- SIS_Never (in configuration: Never) Never put short ifs on the same line.\r\n- SIS_WithoutElse (in configuration: WithoutElse) Without else put short ifs on the same line only if the else is not a compound statement.\r\n- SIS_Always (in configuration: Always) Always put short ifs on the same line if the else is not a compound statement or not.",
+          Description = "If true, if (a) return; can be put on a single line.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "SIS_Never", Value = "Never", Description = "Never put short ifs on the same line" },
+            new FormatOptionSelectModelValue { Name = "SIS_WithoutElse", Value = "WithoutElse", Description = "Without else put short ifs on the same line only if the else is not a compound statement" },
+            new FormatOptionSelectModelValue { Name = "SIS_Always", Value = "Always", Description = "Always put short ifs on the same line if the else is not a compound statement or not" },
+          },
           Input = "Never"
         }
       },
       {
         "AllowShortLambdasOnASingleLine",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(9),
           Name = "AllowShortLambdasOnASingleLine",
           Paramater = "ShortLambdaStyle",
-          Description = "Dependent on the value, auto lambda []() { return 0; } can be put on a single line.\r\nPossible values:\r\n- SLS_None (in configuration: None) Never merge lambdas into a single line.\r\n- SLS_Empty (in configuration: Empty) Only merge empty lambdas\r\n- SLS_Inline (in configuration: Inline) Merge lambda into a single line if argument of a function.\r\n- SLS_All (in configuration: All) Merge all lambdas fitting on a single line.",
+          Description = "Dependent on the value, auto lambda []() { return 0; } can be put on a single line.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "SLS_None", Value = "None", Description = "Never merge lambdas into a single line" },
+            new FormatOptionSelectModelValue { Name = "SLS_Empty", Value = "Empty", Description = "Only merge empty lambdas" },
+            new FormatOptionSelectModelValue { Name = "SLS_Inline", Value = "Inline", Description = "Merge lambda into a single line if argument of a function" },
+            new FormatOptionSelectModelValue { Name = "SLS_All", Value = "All", Description = "Merge all lambdas fitting on a single line" },
+          },
           Input = "All"
         }
       },
@@ -234,22 +283,34 @@ namespace ClangFormatEditor
       },
       {
         "AlwaysBreakAfterDefinitionReturnType",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 7),
           Deprecated = CLangVersion(3, 8),
           Name = "AlwaysBreakAfterDefinitionReturnType",
           Paramater = "DefinitionReturnTypeBreakingStyle",
-          Description = "The function definition return type breaking style to use. This option is deprecated and is retained for backwards compatibility.\r\nPossible values:\r\n- DRTBS_None (in configuration: None) Break after return type automatically. PenaltyReturnTypeOnItsOwnLine is taken into account.\r\n- DRTBS_All (in configuration: All) Always break after the return typ\r\n- DRTBS_TopLevel (in configuration: TopLevel) Always break after the return types of top-level functions.",
+          Description = "The function definition return type breaking style to use. This option is deprecated and is retained for backwards compatibility.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "DRTBS_None", Value = "None", Description = "Break after return type automatically. PenaltyReturnTypeOnItsOwnLine is taken into account" },
+            new FormatOptionSelectModelValue { Name = "DRTBS_All", Value = "All", Description = "Always break after the return type" },
+            new FormatOptionSelectModelValue { Name = "DRTBS_TopLevel", Value = "TopLevel", Description = "Always break after the return types of top-level functions" },
+          },
           Input = "All"
         }
       },
       {
         "AlwaysBreakAfterReturnType",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 8),
           Name = "AlwaysBreakAfterReturnType",
           Paramater = "ReturnTypeBreakingStyle",
-          Description = "The function declaration return type breaking style to use.\r\nPossible values:\r\n- RTBS_None (in configuration: None) Break after return type automatically. PenaltyReturnTypeOnItsOwnLine is taken into accou\r\n- RTBS_All (in configuration: All) Always break after the return type.\r\n- RTBS_TopLevel (in configuration: TopLevel) Always break after the return types of top-level functions.\r\n- RTBS_AllDefinitions (in configuration: AllDefinitions) Always break after the return type of function definitions.\r\n- RTBS_TopLevelDefinitions (in configuration: TopLevelDefinitions) Always break after the return type of top-level definitions.",
+          Description = "The function declaration return type breaking style to use.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "RTBS_None", Value = "None", Description = "Break after return type automatically. PenaltyReturnTypeOnItsOwnLine is taken into account" },
+            new FormatOptionSelectModelValue { Name = "RTBS_All", Value = "All", Description = "Always break after the return type" },
+            new FormatOptionSelectModelValue { Name = "RTBS_TopLevel", Value = "TopLevel", Description = "Always break after the return types of top-level functions" },
+            new FormatOptionSelectModelValue { Name = "RTBS_AllDefinitions", Value = "AllDefinitions", Description = "Always break after the return type of function definitions" },
+            new FormatOptionSelectModelValue { Name = "RTBS_TopLevelDefinitions", Value = "TopLevelDefinitions", Description = "Always break after the return type of top-level definitions" },
+          },
           Input = "None"
         }
       },
@@ -265,11 +326,16 @@ namespace ClangFormatEditor
       },
       {
         "AlwaysBreakTemplateDeclarations",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 4),
           Name = "AlwaysBreakTemplateDeclarations",
           Paramater = "BreakTemplateDeclarationsStyle",
-          Description = "The template declaration breaking style to use.\r\nPossible values:\r\n- BTDS_No (in configuration: No) Do not force break before declaration. PenaltyBreakTemplateDeclaration is taken into account\r\n- BTDS_MultiLine (in configuration: MultiLine) Force break after template declaration only when the following declaration spans multiple lines\r\n- BTDS_Yes (in configuration: Yes) Always break after template declaration.",
+          Description = "The template declaration breaking style to use.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "BTDS_No", Value = "No", Description = "Do not force break before declaration. PenaltyBreakTemplateDeclaration is taken into account" },
+            new FormatOptionSelectModelValue { Name = "BTDS_MultiLine", Value = "MultiLine", Description = "Force break after template declaration only when the following declaration spans multiple lines" },
+            new FormatOptionSelectModelValue { Name = "BTDS_Yes", Value = "Yes", Description = "Always break after template declaration" },
+          },
           Input = "MultiLine"
         }
       },
@@ -314,11 +380,17 @@ namespace ClangFormatEditor
       },
       {
         "BitFieldColonSpacing",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(12),
           Name = "BitFieldColonSpacing",
           Paramater = "BitFieldColonSpacingStyle",
-          Description = "The BitFieldColonSpacingStyle to use for bitfields.Possible values:\r\n- BFCS_Both (in configuration: Both) Add one space on each side of the :\r\n- BFCS_None (in configuration: None) Add no space around the : (except when needed for AlignConsecutiveBitFields).\r\n- BFCS_Before (in configuration: Before) Add space before the : only\r\n- BFCS_After (in configuration: After) Add space after the : only (space may be added before if needed for AlignConsecutiveBitFields).",
+          Description = "The BitFieldColonSpacingStyle to use for bitfields.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "BFCS_Both", Value = "Both", Description = "Add one space on each side of the :" },
+            new FormatOptionSelectModelValue { Name = "BFCS_None", Value = "None", Description = "Add no space around the : (except when needed for AlignConsecutiveBitFields)" },
+            new FormatOptionSelectModelValue { Name = "BFCS_Before", Value = "Before", Description = "Add space before the : only" },
+            new FormatOptionSelectModelValue { Name = "BFCS_After", Value = "After", Description = "Add space after the : only (space may be added before if needed for AlignConsecutiveBitFields)" },
+          },
           Input = "None"
         }
       },
@@ -388,21 +460,37 @@ namespace ClangFormatEditor
       },
       {
         "BreakBeforeBinaryOperators",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 8),
           Name = "BreakBeforeBinaryOperators",
           Paramater = "BinaryOperatorStyle",
-          Description = "The way to wrap binary operators.\r\nPossible values:\r\n- BOS_None (in configuration: None) Break after operators.\r\n- BOS_NonAssignment (in configuration: NonAssignment) Break before operators that aren’t assignments.\r\n- BOS_All (in configuration: All) Break before operators.",
+          Description = "The way to wrap binary operators.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "BOS_None", Value = "None", Description = "Break after operators" },
+            new FormatOptionSelectModelValue { Name = "BOS_NonAssignment", Value = "NonAssignment", Description = "Break before operators that aren’t assignments" },
+            new FormatOptionSelectModelValue { Name = "BOS_All", Value = "All", Description = "Break before operators" },
+          },
           Input = "None"
         }
       },
       {
         "BreakBeforeBraces",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(3, 7),
           Name = "BreakBeforeBraces",
           Paramater = "BraceBreakingStyle",
-          Description = "- BS_Attach (in configuration: Attach) Always attach braces to surrounding context.\r\n- BS_Linux (in configuration: Linux) Like Attach, but break before braces on function, namespace and class definitions.\r\n- BS_Stroustrup (in configuration: Stroustrup) Like Attach, but break before function definitions.\r\n- BS_Allman (in configuration: Allman) Always break before braces.",
+          Description = "The brace breaking style to use.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "BS_Attach", Value = "Attach", Description = "Always attach braces to surrounding context" },
+            new FormatOptionSelectModelValue { Name = "BS_Linux", Value = "Linux", Description = "Like Attach, but break before braces on function, namespace and class definitions" },
+            new FormatOptionSelectModelValue { Name = "BS_Mozilla", Value = "Mozilla", Description = "Like Attach, but break before braces on enum, function, and record definitions" },
+            new FormatOptionSelectModelValue { Name = "BS_Stroustrup", Value = "Stroustrup", Description = "Like Attach, but break before function definitions" },
+            new FormatOptionSelectModelValue { Name = "BS_Allman", Value = "Allman", Description = "Always break before braces" },
+            new FormatOptionSelectModelValue { Name = "BS_Whitesmiths", Value = "Whitesmiths", Description = "Like Allman but always indent braces and line up code with braces" },
+            new FormatOptionSelectModelValue { Name = "BS_GNU", Value = "GNU", Description = "Always break before braces and add an extra level of indentation to braces of control statements, not to those of class, function or other definitions" },
+            new FormatOptionSelectModelValue { Name = "BS_WebKit", Value = "WebKit", Description = "Like Attach, but break before functions" },
+            new FormatOptionSelectModelValue { Name = "BS_Custom", Value = "Custom", Description = "Configure each individual brace in BraceWrapping" },
+          },
           Input = "Attach"
         }
       },
@@ -446,7 +534,7 @@ namespace ClangFormatEditor
           BooleanCombobox = ToggleValues.True
         }
       },
-      /*
+      /* Removed from clang-format ? not in doc anymore https://clang.llvm.org/docs/ClangFormatStyleOptions.html
       {
         "BreakBeforeInheritanceComma",
         new FormatOptionToggleModel {
@@ -459,21 +547,31 @@ namespace ClangFormatEditor
       */
       {
         "BreakConstructorInitializers",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(5),
           Name = "BreakConstructorInitializers",
           Paramater = "BreakConstructorInitializersStyle",
-          Description = "The constructor initializers style to use.\r\nPossible values:\r\n- BCIS_BeforeColon (in configuration: BeforeColon) Break constructor initializers before the colon and after the commas.\r\n- BCIS_BeforeComma (in configuration: BeforeComma) Break constructor initializers before the colon and commas, and align the commas with the colon.\r\n- BCIS_AfterColon (in configuration: AfterColon) Break constructor initializers after the colon and commas.",
+          Description = "The constructor initializers style to use.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "BCIS_BeforeColon", Value = "BeforeColon", Description = "Break constructor initializers before the colon and after the commas" },
+            new FormatOptionSelectModelValue { Name = "BCIS_BeforeComma", Value = "BeforeComma", Description = "Break constructor initializers before the colon and commas, and align the commas with the colon" },
+            new FormatOptionSelectModelValue { Name = "BCIS_AfterColon", Value = "AfterColon", Description = "Break constructor initializers after the colon and commas" },
+          },
           Input = "BeforeColon"
         }
       },
       {
         "BreakInheritanceList",
-        new FormatOptionInputModel {
+        new FormatOptionSelectModel {
           Version = CLangVersion(7),
           Name = "BreakInheritanceList",
           Paramater = "BreakInheritanceListStyle",
-          Description = "The inheritance list style to use.\r\nPossible values:\r\n- BILS_BeforeColon (in configuration: BeforeColon) Break inheritance list before the colon and after the commas.\r\n- BILS_BeforeComma (in configuration: BeforeComma) Break inheritance list before the colon and commas, and align the commas with the colon.\r\n- BILS_AfterColon (in configuration: AfterColon) Break inheritance list after the colon and commas",
+          Description = "The inheritance list style to use.",
+          Values = new[] {
+            new FormatOptionSelectModelValue { Name = "BILS_BeforeColon", Value = "BeforeColon", Description = "Break inheritance list before the colon and after the commas" },
+            new FormatOptionSelectModelValue { Name = "BILS_BeforeComma", Value = "BeforeComma", Description = "Break inheritance list before the colon and commas, and align the commas with the colon" },
+            new FormatOptionSelectModelValue { Name = "BILS_AfterColon", Value = "AfterColon", Description = "Break inheritance list after the colon and commas" },
+          },
           Input = "BeforeColon"
         }
       },
@@ -493,7 +591,8 @@ namespace ClangFormatEditor
           Version = CLangVersion(3, 7),
           Name = "ColumnLimit",
           Paramater = "unsigned",
-          Description = "The column limit.\r\nA column limit of 0 means that there is no column limit. In this case, clang-format will respect the input’s line breaking decisions within statements unless they contradict other rules",
+          Description = "The column limit.\r\n"
+                      + "A column limit of 0 means that there is no column limit. In this case, clang-format will respect the input’s line breaking decisions within statements unless they contradict other rules",
           Input = "80"
         }
       },

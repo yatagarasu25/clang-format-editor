@@ -57,6 +57,11 @@ namespace ClangFormatEditor
               inputModel.IsEnabled = true;
               break;
 
+            case FormatOptionSelectModel inputModel:
+              MapInputModel(entry, inputModel);
+              inputModel.IsEnabled = true;
+              break;
+
             case FormatOptionMultipleToggleModel multipleToggleModel:
               MapMultipleToogleModel(multipleToggleModel, option.Name);
               multipleToggleModel.IsEnabled = true;
@@ -99,6 +104,17 @@ namespace ClangFormatEditor
     }
 
     private static void MapInputModel(KeyValuePair<YamlNode, YamlNode> entry, FormatOptionInputModel inputModel)
+    {
+      var inputValue = entry.Value.ToString();
+      if (inputValue.Contains('^') || inputValue.Length == 0)
+      {
+        inputModel.Input = string.Concat("'", inputValue, "'");
+        return;
+      }
+      inputModel.Input = inputValue;
+    }
+
+    private static void MapInputModel(KeyValuePair<YamlNode, YamlNode> entry, FormatOptionSelectModel inputModel)
     {
       var inputValue = entry.Value.ToString();
       if (inputValue.Contains('^') || inputValue.Length == 0)
